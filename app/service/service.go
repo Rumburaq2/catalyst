@@ -840,6 +840,7 @@ func (s *Service) CreateTicket(ctx context.Context, request openapi.CreateTicket
 		Resolution:  request.Body.Resolution,
 		Type:        request.Body.Type,
 		State:       marshal(request.Body.State),
+		Schema:      marshal(request.Body.Schema),
 	})
 	if err != nil {
 		return nil, err
