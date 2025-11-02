@@ -39,9 +39,7 @@ const formdata = ref<Record<string, any>>({})
 onMounted(() => {
   if (!model.value) return
 
-  for (const key in props.schema?.properties) {
-    formdata.value[key] = model.value[key]
-  }
+  formdata.value = { ...model.value }
 })
 
 watch(
