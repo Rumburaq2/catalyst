@@ -1,3 +1,8 @@
+# type: Schedule
+# cron expression: 12 * * * *
+# requirements.txt
+# requests
+#
 import sys
 import json
 import random
@@ -10,7 +15,7 @@ header = {"Authorization": "Bearer " + os.environ["CATALYST_TOKEN"]}
 
 newtickets = requests.get(url + "/api/tickets?limit=3", headers=header).json()
 for ticket in newtickets:
-    requests.delete(url + "/api/tickets/" + ticket["id"], headers=header)
+    #requests.delete(url + "/api/tickets/" + ticket["id"], headers=header)
 
 # Create a new ticket
 requests.post(url + "/api/tickets", headers=header, json={
